@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Evento;
+
 class EventController extends Controller
 {
     public function home($nome = null)
@@ -13,7 +15,9 @@ class EventController extends Controller
 
     public function eventos()
     {
-        return view('eventos');
+        $eventos = Evento::all();
+
+        return view('eventos', ['eventos' => $eventos]);
     }
 
     public function contato()
