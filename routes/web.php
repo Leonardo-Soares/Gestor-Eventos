@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome'); });
+
+Route::get('/home/{nome?}', [EventController::class, 'home']);
+
+Route::get('/eventos', [EventController::class, 'eventos']);
+
+Route::get('/contato', [EventController::class, 'contato']);
+
+Route::get('/login', [UsuarioController::class, 'login']);

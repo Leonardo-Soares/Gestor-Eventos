@@ -3,5 +3,7 @@
 @extends('layouts.menu')
 
 @section('content')
-    <h1>Inicio </h1>
+
+    <h1>Eventos em Belém</h1>
+
 @endsection
