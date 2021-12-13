@@ -21,6 +21,7 @@ class CreateEventosTable extends Migration
             $table->text('horario');
             $table->text('endereco');
             $table->text('descricao');
+            $table->boolean('privado');
             $table->timestamps();
         });
     }

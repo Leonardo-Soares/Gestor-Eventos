@@ -19,7 +19,10 @@ Route::get('/', function () { return view('welcome'); });
 
 Route::get('/home/{nome?}', [EventController::class, 'home']);
 
-Route::get('/eventos', [EventController::class, 'eventos']);
+Route::get('/eventos', [EventController::class, 'exibieventos']);
+Route::get('/eventos/criar', [EventController::class, 'criaevento']);
+Route::post('/eventos', [EventController::class, 'enviaevento']);
+
 
 Route::get('/contato', [EventController::class, 'contato']);
 

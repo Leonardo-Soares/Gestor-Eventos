@@ -9,7 +9,11 @@
 
 
 ## Gestor de Eventos
-
+ 
+### AULA 15
+- Action Store
+- Com ela iremos criar um objeto e compor ele com a base nos dados enviados pelo POST
+- Com o objetoo formado utilizamos o  metódo SAVE para persistir os dados  
 
 ## About Laravel
 
