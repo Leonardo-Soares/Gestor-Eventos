@@ -13,6 +13,9 @@
             <a class="nav-link" href="/eventos">Eventos</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/eventos/criar" tabindex="-1" aria-disabled="true">Criar Evento</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/contato" tabindex="-1" aria-disabled="true">Contato</a>
           </li>
           <li class="nav-item">
@@ -23,4 +26,17 @@
     </div>
   </nav>
 
-@yield('content')
+<body>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        @if (session('sucesso'))
+          <p class="bg-danger">{{ session('sucesso') }}</p>
+        @endif
+
+        @yield('content')
+      </div>
+    </div>
+  </main>
+</body>
+

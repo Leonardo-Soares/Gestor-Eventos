@@ -15,6 +15,13 @@
 - Com ela iremos criar um objeto e compor ele com a base nos dados enviados pelo POST
 - Com o objetoo formado utilizamos o  metódo SAVE para persistir os dados  
 
+### AULA 16
+Flash Messages
+- Adicionar mensagens ao usuário por _sessão_, elas são conhecidas como _flash messages_
+- Pode ser adicionado no controle com o método _with_ (depois do return)
+- Útil para UX do usuário
+- Pode ser verificado a presença de mensagem diretiva com _@session_
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

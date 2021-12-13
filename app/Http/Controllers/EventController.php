@@ -40,7 +40,7 @@ class EventController extends Controller
 
         $evento->save(); // Salvar dados no banco
 
-        return redirect('/'); // Redirecionamento do usuário
+        return redirect('/')->with('sucesso','Evento cadastrado com sucesso !'); // Redirecionamento do usuário
 
     }
 
