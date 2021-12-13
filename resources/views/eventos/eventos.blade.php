@@ -14,6 +14,7 @@
             <li>Dia: {{ $evento->dia }}</li>
             <li>Hora: {{ $evento->horario }}</li>
             <li>Descrição: {{ $evento->descricao }}</li>
+            <a href="eventos/detalhes/{{ $evento->id }}" class="btn btn-primary">Saber mais</a>
         </ul>
     @endforeach
 

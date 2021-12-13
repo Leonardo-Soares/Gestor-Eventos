@@ -18,7 +18,7 @@ class EventController extends Controller
     {
         $eventos = Evento::all();
 
-        return view('eventos/eventos', ['eventos' => $eventos]);
+        return view('eventos.eventos', ['eventos' => $eventos]);
     }
 
     public function criaevento()
@@ -61,5 +61,12 @@ class EventController extends Controller
     public function contato()
     {
         return view('contato');
+    }
+
+    public function detalhesevento($id)
+    {
+        $eventos = Evento::findOrFail($id);
+
+        return view('eventos.detalhes', ['eventos' => $eventos]);
     }
 }
