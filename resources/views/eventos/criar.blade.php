@@ -42,6 +42,7 @@
                 <option value="1">Sim</option>
             </select>
         </div>
+        {{-- INFRAESTRUTURA DO EVENTO --}}
         <div class="form-group">
             <label for="titulo">Infraestrutura do Evento: </label>
         </div>

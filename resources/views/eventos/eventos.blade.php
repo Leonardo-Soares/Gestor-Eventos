@@ -11,7 +11,7 @@
             <li>Título: {{ $evento->titulo }}</li>
             <li>Cidade: {{ $evento->cidade }}</li>
             <li>Endereço: {{ $evento->endereco }}</li>
-            <li>Dia: {{ $evento->dia }}</li>
+            <li>Dia: {{ date('d/m/Y', strtotime($evento->dia)) }}</li>
             <li>Hora: {{ $evento->horario }}</li>
             <li>Descrição: {{ $evento->descricao }}</li>
             <h3>O evento conta com:</h3>
@@ -23,5 +23,9 @@
             <a href="eventos/detalhes/{{ $evento->id }}" class="btn btn-primary">Saber mais</a>
         </ul>
     @endforeach
+
+    @if (count($eventos) == 0)
+        <p>Não temos eventos hoje</p>
+    @endif
 
 @endsection
