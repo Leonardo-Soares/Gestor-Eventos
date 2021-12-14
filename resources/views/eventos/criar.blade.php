@@ -42,6 +42,30 @@
                 <option value="1">Sim</option>
             </select>
         </div>
+        <div class="form-group">
+            <label for="titulo">Infraestrutura do Evento: </label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="items[]" value="Ar condicionado">Ar condicionado
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="items[]" value="Food">Food
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="items[]" value="Cadeiras">Cadeiras
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="items[]" value="Mesas">Mesas
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="items[]" value="Brindes">Brindes
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="items[]" value="Certificado">Certificado
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="items[]" value="Música">Música
+        </div>
 
         <input type="submit" value="Criar Evento" class="btn btn-primary">
     </form>

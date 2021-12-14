@@ -17,7 +17,6 @@ class EventController extends Controller
     public function exibieventos()
     {
         $eventos = Evento::all();
-
         return view('eventos.eventos', ['eventos' => $eventos]);
     }
 
@@ -37,6 +36,7 @@ class EventController extends Controller
         $evento->endereco = $request->endereco;
         $evento->descricao = $request->descricao;
         $evento->privado = $request->privado;
+        $evento->items = $request->items;
 
         // upload de imagens
         if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
