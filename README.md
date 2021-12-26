@@ -28,6 +28,13 @@ Flash Messages
 - Após envio para Controller, apenas recebemos do request os itens e o resto do processo igual ao dos outros dados da nossa model
 - Utilização do _protected_ na modal para determinar o tipo de dado 
 
+### AULA 21
+-> Busca no Laravel
+
+- Eloquent
+- "Where" vai identificar os registros que precisamos, fazendo um filtro e nos enviando para a view
+- Podemos fazer a exibição de busca na própria Hom, mudando o layout com diretivas de Blade
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
