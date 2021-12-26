@@ -17,11 +17,13 @@ class CreateEventosTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->text('cidade');
-            $table->text('dia');
+            $table->dateTime('dia');
             $table->text('horario');
             $table->text('endereco');
             $table->text('descricao');
             $table->boolean('privado');
+            $table->string('imagem');
+            $table->json('items');
             $table->timestamps();
         });
     }

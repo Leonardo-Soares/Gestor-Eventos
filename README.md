@@ -22,6 +22,12 @@ Flash Messages
 - Útil para UX do usuário
 - Pode ser verificado a presença de mensagem diretiva com _@session_
 
+### AULA 17
+- Crição de um determinado arquivo json via migrations
+- Pode-se utilizar inputs como checkbox
+- Após envio para Controller, apenas recebemos do request os itens e o resto do processo igual ao dos outros dados da nossa model
+- Utilização do _protected_ na modal para determinar o tipo de dado 
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
