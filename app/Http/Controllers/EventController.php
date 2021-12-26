@@ -9,16 +9,26 @@ use Illuminate\Console\Scheduling\Event;
 
 class EventController extends Controller
 {
-    public function home($nome = null)
+    public function home()
     { 
-        return view('home', ['nome' => $nome]);
+        return view('home', ['eventos' => $eventos]);
     }
 
     public function exibieventos()
     {
-        $eventos = Evento::all();
+        $procurar = request('procurar');
 
-        return view('eventos.eventos', ['eventos' => $eventos]);
+        if ($procurar) {
+            $eventos = Evento::where([
+                ['titulo', 'like', '%'.$procurar.'%']
+            ])->get();
+        }
+
+        else {
+            $eventos = Evento::all();
+        }
+        
+        return view('eventos.eventos', ['eventos' => $eventos, 'procurar' => $procurar]);
     }
 
     public function criaevento()

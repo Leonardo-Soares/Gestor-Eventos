@@ -4,11 +4,6 @@
 
 @section('content')
 
-    @if ($nome != null)
-        <h1>Usuário: {{$nome}}</h1> 
-
-    @else 
-        <h1>Valor Nulo</h1>
-    @endif
+<h1>Home</h1>
 
 @endsection
