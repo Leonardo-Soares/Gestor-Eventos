@@ -9,7 +9,7 @@ use Illuminate\Console\Scheduling\Event;
 
 class EventController extends Controller
 {
-    public function home()
+    public function home(Request $eventos)
     { 
         return view('home', ['eventos' => $eventos]);
     }
