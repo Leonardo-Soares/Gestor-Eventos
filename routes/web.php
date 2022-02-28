@@ -20,7 +20,7 @@ Route::get('/', function () { return view('welcome'); });
 Route::get('/home/{nome?}', [EventController::class, 'home']);
 
 Route::get('/eventos', [EventController::class, 'exibieventos']);
-Route::get('/eventos/criar', [EventController::class, 'criaevento']);
+Route::get('/eventos/criar', [EventController::class, 'criaevento'])->middleware('auth');
 Route::get('/eventos/detalhes/{id}', [EventController::class, 'detalhesevento'])->name('detalhesevento');
 Route::post('/eventos', [EventController::class, 'enviaevento']);
 
