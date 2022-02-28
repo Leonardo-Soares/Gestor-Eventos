@@ -28,7 +28,7 @@
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
                             <td><a href="/eventos/detalhes/{{ $evento->id }}">{{ $evento->titulo }}</a></td>
-                            <td>0</td>
+                            <td> {{ count($evento->users) }} </td>
                             <td>
                                 <a href="/eventos/editar/{{ $evento->id }}">Editar</a>
                                 <form action="/eventos/detalhes/{{ $evento->id }}" method="POST">
@@ -46,6 +46,34 @@
         @else
             <p>Sem evento, <a href="/eventos/criar">Criar evento</a></p>
         @endif
+    </div>
+
+    <div class="col-10">
+        <h2>Eventos que estou participando </h1>
+            @if (count($participanteEvento) > 0)
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Participantes</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($participanteEvento as $evento)
+                            <tr>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td><a href="/eventos/detalhes/{{ $evento->id }}">{{ $evento->titulo }}</a></td>
+                                <td> {{ count($evento->users) }} </td>
+                                <td><a href="#">Sair do evento</a></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+                <p>Sem evento, <a href="/eventos">Ver mais eventos</a></p>
+            @endif
     </div>
 
 @endsection
