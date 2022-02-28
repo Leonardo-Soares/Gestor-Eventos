@@ -65,6 +65,9 @@ class EventController extends Controller
             $evento->imagem = $imageName;
         }
 
+        $user = auth()->user();
+        $evento->user_id = $user->id;
+
         $evento->save(); // Salvar dados no banco
 
         return redirect('/')->with('sucesso','Evento cadastrado com sucesso !'); // Redirecionamento do usuário
