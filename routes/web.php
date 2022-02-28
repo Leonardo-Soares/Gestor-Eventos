@@ -27,4 +27,6 @@ Route::post('/eventos', [EventController::class, 'enviaevento']);
 Route::get('/contato', [EventController::class, 'contato']);
 
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
-Route::delete('/eventos/detalhes/{id}', [EventController::class, 'destroy']);
+Route::delete('/eventos/detalhes/{id}', [EventController::class, 'destroy'])->middleware('auth');
+Route::get('/eventos/editar/{id}', [EventController::class, 'edit'])->middleware('auth');
+Route::put('/eventos/atualizar/{id}', [EventController::class, 'update'])->middleware('auth');

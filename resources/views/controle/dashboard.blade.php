@@ -30,7 +30,7 @@
                             <td><a href="/eventos/detalhes/{{ $evento->id }}">{{ $evento->titulo }}</a></td>
                             <td>0</td>
                             <td>
-                                <a href="#">Editar</a>
+                                <a href="/eventos/editar/{{ $evento->id }}">Editar</a>
                                 <form action="/eventos/detalhes/{{ $evento->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
