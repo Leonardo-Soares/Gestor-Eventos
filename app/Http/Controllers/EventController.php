@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Evento;
+use App\Models\User;
 use Illuminate\Console\Scheduling\Event;
 
 class EventController extends Controller
@@ -83,6 +84,8 @@ class EventController extends Controller
     {
         $eventos = Evento::findOrFail($id);
 
-        return view('eventos.detalhes', ['eventos' => $eventos]);
+        $donoevento = User::where('id', $eventos->user_id)->first()->toArray();
+
+        return view('eventos.detalhes', ['eventos' => $eventos, 'donoevento' => $donoevento]);
     }
 }
