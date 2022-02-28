@@ -17,6 +17,17 @@
                 <h3>Dia: {{ $eventos->dia }}</h3>
                 <h3>Horário: {{ $eventos->horario }}</h3>
                 <h3>Descrição: {{ $eventos->descricao }}</h3>
+                <h3>Participantes {{count($eventos->users)}}</h3>
+                <form action="/eventos/join/{{$eventos->id}}" method="POST">
+                    @csrf
+                    <a href="/eventos/join/{{$eventos->id}}"
+                    class="btn btn-primary"
+                    onclick="event.preventDefault();
+                    this.closest('form').submit();
+                    ">
+                    Confirmar Presença
+                    </a>
+                </form>
             </div>
         </div>
     </div>

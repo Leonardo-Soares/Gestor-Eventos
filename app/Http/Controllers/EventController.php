@@ -90,6 +90,18 @@ class EventController extends Controller
     }
 
 
+    public function participaevento($id)
+    {
+        $user = auth()->user();
+
+        $user->participanteEvento()->attach($id);
+
+        $evento = Evento::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Presença confirmada para ' . $evento->titulo);
+    }
+
+
 
     // DASHBOARD
 
