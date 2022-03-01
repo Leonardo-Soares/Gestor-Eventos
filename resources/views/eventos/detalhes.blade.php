@@ -3,7 +3,6 @@
 @extends('layouts.menu')
 
 @section('content')
-
     <div class="col-md-10">
         <div class="row">
             <div id="imagem-container" class="col-md-6">
@@ -17,19 +16,20 @@
                 <h3>Dia: {{ $eventos->dia }}</h3>
                 <h3>Horário: {{ $eventos->horario }}</h3>
                 <h3>Descrição: {{ $eventos->descricao }}</h3>
-                <h3>Participantes {{count($eventos->users)}}</h3>
-                <form action="/eventos/join/{{$eventos->id}}" method="POST">
-                    @csrf
-                    <a href="/eventos/join/{{$eventos->id}}"
-                    class="btn btn-primary"
-                    onclick="event.preventDefault();
-                    this.closest('form').submit();
-                    ">
-                    Confirmar Presença
-                    </a>
-                </form>
+                <h3>Participantes {{ count($eventos->users) }}</h3>
+                @if(!$participanteEvento)
+                    <form action="/eventos/join/{{ $eventos->id }}" method="POST">
+                        @csrf
+                        <a href="/eventos/join/{{ $eventos->id }}" class="btn btn-primary" onclick="event.preventDefault();
+                            this.closest('form').submit();
+                            ">
+                            Confirmar Presença
+                        </a>
+                    </form>
+                @else
+                <p>está no evento</p>
+                @endif
             </div>
         </div>
     </div>
-
 @endsection

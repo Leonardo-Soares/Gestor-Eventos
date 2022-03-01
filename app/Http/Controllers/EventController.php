@@ -84,9 +84,19 @@ class EventController extends Controller
     {
         $eventos = Evento::findOrFail($id);
 
-        $donoevento = User::where('id', $eventos->user_id)->first()->toArray();
+        $user = auth()->user();
+        $participanteEvento = false;
 
-        return view('eventos.detalhes', ['eventos' => $eventos, 'donoevento' => $donoevento]);
+            //dd($user);
+            if($user->isparticipaEvento($id)){
+                $participanteEvento = true;
+            }   
+        
+
+        $donoevento = User::where('id', $eventos->user_id)->first()->toArray();
+        
+
+        return view('eventos.detalhes', ['eventos' => $eventos, 'donoevento' => $donoevento, 'participanteEvento'=> $participanteEvento]);
     }
 
 
@@ -99,6 +109,18 @@ class EventController extends Controller
         $evento = Evento::findOrFail($id);
 
         return redirect('/dashboard')->with('msg', 'Presença confirmada para ' . $evento->titulo);
+    }
+
+    public function sairevento($id)
+    {
+        $user = auth()->user();
+
+        $user->participanteEvento()->detach($id);
+
+        $evento = Evento::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Você saiu com sucesso do evento ' . $evento->titulo);
+        
     }
 
 
@@ -158,4 +180,6 @@ class EventController extends Controller
 
         return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
     }
+
+
 }

@@ -66,7 +66,15 @@
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td><a href="/eventos/detalhes/{{ $evento->id }}">{{ $evento->titulo }}</a></td>
                                 <td> {{ count($evento->users) }} </td>
-                                <td><a href="#">Sair do evento</a></td>
+                                <td>
+                                  <form action="/eventos/exit/{{ $evento->id}}" method="POST">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="btn btn-danger">
+                                      Sair do evento
+                                    </button>
+                                  </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

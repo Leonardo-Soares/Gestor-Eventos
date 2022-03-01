@@ -68,4 +68,22 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Evento');
     }
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var interger
+     * @return bool
+     */
+    public function isparticipaEvento($id)
+    {
+        $userEventos = $this->participanteEvento()->where('id', $id)->get();
+        
+        if ($userEventos) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
